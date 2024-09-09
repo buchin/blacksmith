@@ -10,4 +10,5 @@
 ## Build
 
 - Clone this repo
-- `php -d phar.readonly=0 bin/build -v7.4.2-fix` 
+- `php -d phar.readonly=0 bin/build -v7.4.2-fix`
+- `mv deployer.phar blacksmith`
