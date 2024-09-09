@@ -14,8 +14,8 @@ set('public_path', function () {
 
 desc('Provision website');
 task('provision:website', function () {
+    set('remote_user', 'deployer');
     run("[ -d {{deploy_path}} ] || mkdir -p {{deploy_path}}");
-    run("chown -R deployer:deployer {{deploy_path}}");
 
     set('deploy_path', run("realpath {{deploy_path}}"));
     cd('{{deploy_path}}');
@@ -43,6 +43,8 @@ task('provision:website', function () {
     } else {
         run("echo $'$caddyfile' > Caddyfile");
     }
+
+    set('remote_user', 'root');
 
     if (test("grep -q ':80' /etc/caddy/Caddyfile")) {
         run("echo '' > /etc/caddy/Caddyfile");

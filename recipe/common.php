@@ -2,6 +2,7 @@
 namespace Deployer;
 
 require __DIR__ . '/provision.php';
+require __DIR__ . '/dojo.php';
 require __DIR__ . '/deploy/check_remote.php';
 require __DIR__ . '/deploy/cleanup.php';
 require __DIR__ . '/deploy/clear_paths.php';
