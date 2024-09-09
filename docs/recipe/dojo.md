@@ -73,7 +73,15 @@ This task is group task which contains next tasks:
 
 
 ### dojo:provision:done
-[Source](https://github.com/deployphp/deployer/blob/master/recipe/dojo.php#L22)
+[Source](https://github.com/deployphp/deployer/blob/master/recipe/dojo.php#L15)
+
+
+
+
+
+
+### dojo:ssh_key
+[Source](https://github.com/deployphp/deployer/blob/master/recipe/dojo.php#L23)
 
 
 
