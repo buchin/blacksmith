@@ -6,3 +6,8 @@
 - Automatic server **provisioning**.
 - **Zero downtime** deployments.
 - Ready to use recipes for **most scripts**.
+
+## Build
+
+- Clone this repo
+- `php -d phar.readonly=0 bin/build -v7.4.2-fix` 
