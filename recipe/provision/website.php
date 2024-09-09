@@ -44,10 +44,16 @@ task('provision:website', function () {
         run("echo $'$caddyfile' > Caddyfile");
     }
 
+    if (test("grep -q ':80' /etc/caddy/Caddyfile")) {
+        run("echo '' > /etc/caddy/Caddyfile");
+    }
+
     if (!test("grep -q 'import {{deploy_path}}/Caddyfile' /etc/caddy/Caddyfile")) {
         run("echo 'import {{deploy_path}}/Caddyfile' >> /etc/caddy/Caddyfile");
     }
-    run('service caddy reload');
+
+    run('caddy fmt --overwrite /etc/caddy/Caddyfile');
+    run('caddy reload --config /etc/caddy/Caddyfile');
 
     info("Website {{domain}} configured!");
 })->limit(1);
