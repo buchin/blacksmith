@@ -27,3 +27,7 @@ task('dojo:ssh_key', function (){
 
     echo "<fg=black;bg=bright-green>$ssh_key</>";
 });
+
+task('dojo:reset_known_hosts', function (){
+    runLocally("echo '' > ~/.ssh/known_hosts");
+});
