@@ -88,3 +88,11 @@ This task is group task which contains next tasks:
 
 
 
+### dojo:reset_known_hosts
+[Source](https://github.com/deployphp/deployer/blob/master/recipe/dojo.php#L31)
+
+
+
+
+
+
