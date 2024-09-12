@@ -16,6 +16,7 @@
 * [Laravel Recipe](/docs/recipe/laravel.md)
 * [Magento 2 Recipe](/docs/recipe/magento2.md)
 * [Magento Recipe](/docs/recipe/magento.md)
+* [Multistatic Recipe](/docs/recipe/multistatic.md)
 * [Pimcore Recipe](/docs/recipe/pimcore.md)
 * [Prestashop Recipe](/docs/recipe/prestashop.md)
 * [Provision Recipe](/docs/recipe/provision.md)
