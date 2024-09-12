@@ -1,6 +1,10 @@
 <?php
 namespace Deployer;
 
+require_once __DIR__ . '/laravel.php';
+
+add('recipes', ['dojo']);
+
 task('dojo:provision', [
     'dojo:provision:setup',
     'provision',
