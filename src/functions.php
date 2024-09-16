@@ -654,6 +654,24 @@ function parse(string $value): string
 }
 
 /**
+ * @param string $file_path
+ * @return void
+ * @throws Exception\Exception
+ * @throws Exception\RunException
+ * @throws Exception\TimeoutException
+ */
+function dojo_upload(string $file_path): void
+{
+    $content = file_get_contents($file_path);
+    info('Uploading ' . $file_path);
+
+    cd('{{release_or_current_path}}');
+    run("echo $'$content' > $file_path");
+
+    info($file_path . ' uploaded.');
+}
+
+/**
  * Setup configuration option.
  * @param mixed $value
  * @throws Exception

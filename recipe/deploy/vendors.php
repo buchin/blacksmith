@@ -3,7 +3,7 @@ namespace Deployer;
 
 set('composer_action', 'install');
 
-set('composer_options', '--verbose --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader');
+set('composer_options', '--verbose --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader --ignore-platform-reqs');
 
 // Returns Composer binary path in found. Otherwise try to install latest
 // composer version to `.dep/composer.phar`. To use specific composer version

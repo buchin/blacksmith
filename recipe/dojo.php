@@ -21,7 +21,8 @@ task('dojo:provision:done', function (){
     set('remote_user', 'deployer');
     $ssh_key = run("cat ~/.ssh/id_rsa.pub");
 
-    info('If this is your first time provisioning this server, you should add ssh key to your github/bitbucket account. Run: php blacksmith dojo:ssh_key');
+    info('If this is your first time provisioning this server, you should add ssh key to your github/bitbucket account.');
+    info('Run: php blacksmith dojo:ssh_key');
 });
 
 task('dojo:ssh_key', function (){
@@ -35,3 +36,24 @@ task('dojo:ssh_key', function (){
 task('dojo:reset_known_hosts', function (){
     runLocally("echo '' > ~/.ssh/known_hosts");
 });
+
+task('dojo:upload', function (){
+    $file_path = ask('Enter file name');
+
+    dojo_upload($file_path);
+});
+
+desc('Upload keywords.txt');
+task('dojo:upload_keywords_txt', function (){
+    $file_path = 'keywords.txt';
+
+    dojo_upload($file_path);
+});
+
+desc('Upload .env');
+task('dojo:upload_env', function (){
+    $file_path = '.env';
+
+    dojo_upload($file_path);
+});
+
