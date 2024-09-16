@@ -1,5 +1,6 @@
 # All Recipes
 
+* [Autopost Recipe](/docs/recipe/autopost.md)
 * [Cakephp Recipe](/docs/recipe/cakephp.md)
 * [Codeigniter 4 Recipe](/docs/recipe/codeigniter4.md)
 * [Codeigniter Recipe](/docs/recipe/codeigniter.md)

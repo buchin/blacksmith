@@ -28,7 +28,7 @@ require 'recipe/deploy/vendors.php';
 
 
 ```php title="Default value"
-'--verbose --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader'
+'--verbose --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader --ignore-platform-reqs'
 ```
 
 

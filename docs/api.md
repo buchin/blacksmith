@@ -406,6 +406,14 @@ parse(string $value): string
 Parse set values.
 
 
+## dojo_upload()
+
+```php
+dojo_upload(string $file_path): void
+```
+
+
+
 ## set()
 
 ```php
