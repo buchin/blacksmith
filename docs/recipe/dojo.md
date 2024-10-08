@@ -37,11 +37,10 @@ The [deploy](#deploy) task of **Dojo** consists of:
   * [deploy:shared](/docs/recipe/deploy/shared.md#deployshared) – Creates symlinks for shared files and dirs
   * [deploy:writable](/docs/recipe/deploy/writable.md#deploywritable) – Makes writable dirs
 * [deploy:vendors](/docs/recipe/deploy/vendors.md#deployvendors) – Installs vendors
+* [dojo:upload_env](/docs/recipe/dojo.md#dojoupload_env) – Upload .env
+* [deploy:npm](/docs/recipe/dojo.md#deploynpm) – npm install & npm run build
 * [artisan:storage:link](/docs/recipe/laravel.md#artisanstoragelink) – Creates the symbolic links configured for the application
-* [artisan:config:cache](/docs/recipe/laravel.md#artisanconfigcache) – Creates a cache file for faster configuration loading
-* [artisan:route:cache](/docs/recipe/laravel.md#artisanroutecache) – Creates a route cache file for faster route registration
-* [artisan:view:cache](/docs/recipe/laravel.md#artisanviewcache) – Compiles all of the application\'s Blade templates
-* [artisan:event:cache](/docs/recipe/laravel.md#artisaneventcache) – Discovers and cache the application\'s events and listeners
+* [dojo:deploy_sqlite](/docs/recipe/dojo.md#dojodeploy_sqlite) – deploy sqlite
 * [artisan:migrate](/docs/recipe/laravel.md#artisanmigrate) – Runs the database migrations
 * [deploy:publish](/docs/recipe/common.md#deploypublish) – Publishes the release
   * [deploy:symlink](/docs/recipe/deploy/symlink.md#deploysymlink) – Creates symlink to release
@@ -123,5 +122,40 @@ Upload keywords.txt.
 Upload .env.
 
 
+
+
+### deploy:npm
+[Source](https://github.com/deployphp/deployer/blob/master/recipe/dojo.php#L60)
+
+npm install & npm run build.
+
+
+
+
+### dojo:deploy_sqlite
+[Source](https://github.com/deployphp/deployer/blob/master/recipe/dojo.php#L70)
+
+deploy sqlite.
+
+
+
+
+### deploy
+[Source](https://github.com/deployphp/deployer/blob/master/recipe/dojo.php#L89)
+
+Deploys your project.
+
+Main deploy task.
+
+
+This task is group task which contains next tasks:
+* [deploy:prepare](/docs/recipe/common.md#deployprepare)
+* [deploy:vendors](/docs/recipe/deploy/vendors.md#deployvendors)
+* [dojo:upload_env](/docs/recipe/dojo.md#dojoupload_env)
+* [deploy:npm](/docs/recipe/dojo.md#deploynpm)
+* [artisan:storage:link](/docs/recipe/laravel.md#artisanstoragelink)
+* [dojo:deploy_sqlite](/docs/recipe/dojo.md#dojodeploy_sqlite)
+* [artisan:migrate](/docs/recipe/laravel.md#artisanmigrate)
+* [deploy:publish](/docs/recipe/common.md#deploypublish)
 
 

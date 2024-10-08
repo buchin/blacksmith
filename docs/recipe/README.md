@@ -1,5 +1,6 @@
 # All Recipes
 
+* [Agc herbal Recipe](/docs/recipe/agc_herbal.md)
 * [Autopost Recipe](/docs/recipe/autopost.md)
 * [Cakephp Recipe](/docs/recipe/cakephp.md)
 * [Codeigniter 4 Recipe](/docs/recipe/codeigniter4.md)

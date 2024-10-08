@@ -37,8 +37,11 @@ The [deploy](#deploy) task of **Multistatic** consists of:
   * [deploy:shared](/docs/recipe/deploy/shared.md#deployshared) – Creates symlinks for shared files and dirs
   * [deploy:writable](/docs/recipe/deploy/writable.md#deploywritable) – Makes writable dirs
 * [deploy:vendors](/docs/recipe/deploy/vendors.md#deployvendors) – Installs vendors
-* [deploy:run_migrations](/docs/recipe/flow_framework.md#deployrun_migrations) – Applies database migrations
-* [deploy:publish_resources](/docs/recipe/flow_framework.md#deploypublish_resources) – Publishes resources
+* [dojo:upload_env](/docs/recipe/dojo.md#dojoupload_env) – Upload .env
+* [deploy:npm](/docs/recipe/dojo.md#deploynpm) – npm install & npm run build
+* [artisan:storage:link](/docs/recipe/laravel.md#artisanstoragelink) – Creates the symbolic links configured for the application
+* [dojo:deploy_sqlite](/docs/recipe/dojo.md#dojodeploy_sqlite) – deploy sqlite
+* [artisan:migrate](/docs/recipe/laravel.md#artisanmigrate) – Runs the database migrations
 * [deploy:publish](/docs/recipe/common.md#deploypublish) – Publishes the release
   * [deploy:symlink](/docs/recipe/deploy/symlink.md#deploysymlink) – Creates symlink to release
   * [deploy:unlock](/docs/recipe/deploy/lock.md#deployunlock) – Unlocks deploy
