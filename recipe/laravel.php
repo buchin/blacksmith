@@ -6,9 +6,17 @@ require_once __DIR__ . '/common.php';
 
 add('recipes', ['laravel']);
 
-set('shared_dirs', ['storage']);
-set('shared_files', ['.env']);
+set('shared_dirs', [
+    'storage',
+    'database',
+]);
+
+set('shared_files', [
+    '.env',
+]);
+
 set('writable_dirs', [
+    'database',
     'bootstrap/cache',
     'storage',
     'storage/app',

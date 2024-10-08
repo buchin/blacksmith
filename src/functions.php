@@ -662,6 +662,11 @@ function parse(string $value): string
  */
 function dojo_upload(string $file_path): void
 {
+    if(!file_exists($file_path)) {
+        info('file ' . $file_path . ' does not exist, skipping');
+        return;
+    }
+
     $content = file_get_contents($file_path);
     info('Uploading ' . $file_path);
 

@@ -53,7 +53,46 @@ task('dojo:upload_keywords_txt', function (){
 desc('Upload .env');
 task('dojo:upload_env', function (){
     $file_path = '.env';
-
     dojo_upload($file_path);
 });
 
+desc('npm install & npm run build');
+task('deploy:npm', function () {
+    if(!file_exists('package.json')){
+        info('package.json does not exist, skipping npm install');
+        return false;
+    }
+
+    run('cd {{release_or_current_path}} && npm install && npm run build');
+});
+
+desc('deploy sqlite');
+task('dojo:deploy_sqlite', function () {
+    if (!test('[ -d database ]')) {
+        run('mkdir database');
+    }
+
+    if(!test('[ -f database.sqlite ]')) {
+        run('touch database.sqlite');
+    }
+
+    if(test('[ -f database.sqlite ]')) {
+        info('Database exists, let\'s make it writable');
+        run('cd {{release_or_current_path}} && chmod 777 database/database.sqlite');
+    }
+});
+
+/**
+ * Main deploy task.
+ */
+desc('Deploys your project');
+task('deploy', [
+    'deploy:prepare',
+    'deploy:vendors',
+    'dojo:upload_env',
+    'deploy:npm',
+    'artisan:storage:link',
+    'dojo:deploy_sqlite',
+    'artisan:migrate',
+    'deploy:publish',
+]);
