@@ -68,15 +68,15 @@ task('deploy:npm', function () {
 
 desc('deploy sqlite');
 task('dojo:deploy_sqlite', function () {
-    if (!test('[ -d database ]')) {
-        run('mkdir database');
+    if (!test('[ -d {{release_or_current_path}}/database ]')) {
+        run('mkdir {{release_or_current_path}}/database');
     }
 
-    if(!test('[ -f database.sqlite ]')) {
-        run('touch database.sqlite');
+    if(!test('[ -f {{release_or_current_path}}/database/database.sqlite ]')) {
+        run('touch {{release_or_current_path}}/database/database.sqlite');
     }
 
-    if(test('[ -f database.sqlite ]')) {
+    if(test('[ -f {{release_or_current_path}}/database/database.sqlite ]')) {
         info('Database exists, let\'s make it writable');
         run('cd {{release_or_current_path}} && chmod 777 database/database.sqlite');
     }
